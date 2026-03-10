@@ -1,0 +1,244 @@
+                    
+/* GENERAL */    
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  
+}
+
+@font-face {
+    font-family: "Palanquin";
+    src: url("./assets/fonts/Palanquin_Dark/PalanquinDark-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Palanquin";
+    src: url("./assets/fonts/Palanquin_Dark/PalanquinDark-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+  font-family: "Palanquin", sans-serif;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: whitesmoke;
+  padding-top: 128px;
+  padding-bottom: 128px;
+  color:#363534;
+;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;  
+} 
+
+/* HEADER */
+header {
+  height: 128px;
+  background-color:  #E76C1F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+ 
+}
+
+.HeaderContainer{
+  height: 100%;
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HERO SECTION */
+.HeroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {        
+height: 508px;
+width: 100%;
+object-fit: cover;
+} 
+
+.HeroLogo {
+height: 200px;
+width: 200px;
+border-radius: 150px;
+border: 13px solid #FDEADC;
+margin-top: -120px;
+}
+
+.title{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 48px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h1 b {
+  font-size: 48px;
+  color: #E76C1F;
+}
+
+.TitleRate {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rate{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #FACAAC;
+  padding: 4px 5px;
+  border-radius: 10px;
+}
+.rate img {
+  width: 20px;
+}
+.rate span b{
+  font-size: 20px;
+}
+.rate p {
+  font-weight: 400;
+  color: #726D6D;
+  font-size: 18px;
+}
+
+.title p {
+  font-size:24px;
+}
+
+
+/* MENU */
+.MenuContainer{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 64px;
+}
+
+.menu {
+  width: calc(100% - 300px);
+}
+
+.category {
+  height: 60px;
+  background-color:#E76C1F;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+h2{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.category img{
+  width: 89px;
+  height: 91px;
+}
+
+.DishCard {
+  background-color: #FDEADC;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  margin-bottom: 15px;
+  gap: 16px;
+}
+
+.DishCard img {
+  height: 121px;
+  width: 207px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.dishName {
+  display: flex;
+  flex-direction: column;
+}
+
+.DishCard img:hover {
+  transform: scale(1.1);
+}
+
+.dishName span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.dishName p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.priceAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 48px;
+}
+
+.priceAdd span{
+  font-size: 24px;
+  font-weight: 600;
+}
+.priceAdd button {
+ background-color:#FFFFFF;
+ border-radius: 20px;
+ font-size: 16px;
+ font-weight: 600;
+ border: 0;
+ cursor: pointer;
+}
+
+.priceAdd button:hover{
+  /* background-color: #E76C1F; */
+  transform: scale(1.2);
+}
+
+.priceAdd button:visited {       /* chek das? */
+  color: #E76C1F;
+}
+
+
+
+/* FOOTER */
+footer {
+  height: 128px;
+  background-color:  #E76C1F;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 18px !important; */
+}
+
+.FooterContainer{
+display: flex;
+color: white;
+gap: 16px;
+
+}

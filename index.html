@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestellApp</title>
+    <link
+      rel="icon"
+      type="icon"
+      sizes="32x32"
+      href="./assets/icons-logos/favicon.svg"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="basket.css" />
+  </head>
+
+  <body onload="init()">
+    <header>
+      <nav class="wrapper HeaderContainer">
+        <a href="index.html"
+          ><img src="./assets/icons-logos/Logo.png" alt="logo"
+        /></a>
+        <a href="index.html">
+          <img src="./assets/icons-logos/menu-bar.svg" alt="hamburger icon"
+        /></a>
+      </nav>
+    </header>
+
+    <main class="wrapper">
+      <!--  HERO SECTION  -->
+      <section class="HeroContainer">
+        <img class="hero" src="./assets/img/hero-pic.jpg" alt="hero pic" />
+        <img
+          class="HeroLogo"
+          src="./assets/img/logo-burger.png"
+          alt="hero logo"
+        />
+
+        <div class="title">
+          <div class="TitleRate">
+            <h1><b>Burger</b>House</h1>
+            <div class="rate">
+              <img src="./assets/icons-logos/star.svg" />
+              <span><b>4,1</b></span>
+              <p>(317)</p>
+            </div>
+          </div>
+          <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+        </div>
+      </section>
+
+      <section class="MenuContainer">
+        <!--  MENU  -->
+        <div class="menu" id="menu"></div>
+
+        <!--  BASKET -->
+        <aside class="basketContainer" id="basket">
+     
+        </aside>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="FooterContainer wrapper">
+        <span> ©2025 BurgerHouse</span>
+        <a href="imprint.html">Imprint</a>
+        <a href="Cookie Preferences.html">Cookie Preferences</a>
+      </div>
+    </footer>
+
+    <script src="template.js"></script>
+    <script src="databank.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
