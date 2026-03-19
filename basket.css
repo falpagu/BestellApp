@@ -3,7 +3,9 @@
   margin: 0;
   scroll-behavior: smooth;
   font-size: 16px;
+  font-family: "Palanquin", sans-serif;
 }
+
 a{
   text-decoration: none;
 }
@@ -12,28 +14,130 @@ a{
 /* BASKET   */
 .basketContainer{
   width: 300px;
-  /* flex-grow: 1; */
+  flex-grow: 1;  
 }
 
 .basket{
   width: 100%;
-  height: 500px;
+  height: 700px;   /* it is ok? */
   background-color:#363534;
   border-radius: 15px 0 0 15px;  
   position: sticky;
   top: 15px;
   padding: 20px;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.basketBtnContainer{
+position: relative; 
+}
+
+.closeBasketBtn {
+margin-left: 220px;
+height: 32px;
+}
+
+.dishAmount{
+position: absolute;
+bottom: -9px;
+right: -7px;
+background-color: #c92d06;
+color: #FFFFFF;
+border-radius: 7px;
+padding:0 5px 0 5px;
+}
+
+.closeBasketBtn:hover{
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+.deliveryCollection{
+display: flex;
+border-radius: 20px; 
+background-color: #a4a2a1;
+margin-bottom: 8px;
+padding: 8px;
+gap: 20px;
+
+}
+
+.deliveryCollection img {
+  height: 20px;
+}
+
+.deliveryCollection button {
+  background-color: transparent;
+  color:#363534;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+}
+
+.deliveryCollection button.active{
+  background-color: #363534;
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 7px 12px;
+
+}
+
+.deliveryCollection button:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
 .basket h2 {
   font-size: 32px;
   font-weight: 700;
   color:#FDEADC;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  
 }
 
 
-.basketCard{
+.basket h4 {
+  color: rgb(174, 173, 173);
+  font-size: 24px;
+}
+
+.addedItem {
+  color: #E76C1F;
+}  
+
+.amount{
+color: #363534
+}
+
+.bi-dash-lg {
+  color: red;
+  filter: brightness(1.2);
+}
+
+.bi-plus-lg{
+  color: green;
+  filter: brightness(1.2);
+}
+
+.basketEmty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(174, 173, 173);
+}
+
+.basketEmty img {
+  margin-top: 20px;
+  height: 64px;
+  opacity: 50%;
+}
+
+.basketBox{
 background: #FDEADC;
 border-radius: 20px;
 padding: 8px;
@@ -42,9 +146,31 @@ flex-direction: column;
 gap: 20px;
 font-size: 22px;
 font-weight: 700;
+margin-bottom: 8px;
 }
 
-.basketContent{
+
+.nameDeleteBtn{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.nameDeleteBtn button {
+  height: 24px;
+  background: none;
+  border: none;
+}
+
+
+.basketDishes{
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+} 
+
+
+.basketAmountPreis{
   display: flex;
   justify-content: space-between;
 }
@@ -52,30 +178,21 @@ font-weight: 700;
 .deleteAdd{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
 }
 
-.decrement {
-  height: 24px;
-  cursor: pointer;
+.deleteAdd img {
+  height: 20px;
 }
 
-.increment{
-  font-size: 20px;
-  font-weight: 700;
-  color: #FDEADC;;
-}
-
-.decrement{
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.priceTotal {
+.sum {
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+ 
 }
 
 .priceLine {
@@ -93,9 +210,62 @@ font-weight: 700;
 
 .buyNow{
   background: #E76C1F;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   border-radius: 60px;
-  padding: 10px;
+  padding: 5px;
   margin-top: 24px;
+  
+
 }
+
+/* Order Confirmed Container */
+
+.orderConfirmContainer{  
+  background-color: #363534;
+  padding: 12px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: auto;
+}
+
+.orderConfirmContainer::backdrop{
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.orderConfirmCloseBtn {
+font-size: 32px;
+background: none;
+color: #c92d06;
+font-weight: 900;
+border: none;
+margin-left: 150px;
+}
+
+.orderConfirmCloseBtn:hover{
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+.orderConfirm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.orderConfirm p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FDEADC;
+  margin-top: 10px;
+}
+
+.orderConfirm{
+  font-size: 29px;
+  font-weight: 700;
+  color: #FDEADC;
+} 
+
