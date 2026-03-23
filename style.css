@@ -139,7 +139,7 @@ h1 b {
   margin-bottom: 24px;
   width: 100vw;  
   position: relative;
-  z-index: 1;
+  z-index: 1;   
   
 }
 
@@ -147,9 +147,7 @@ h1 b {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  align-content: center; 
   height: 60px;  
   gap: 8px;
 }
@@ -181,7 +179,6 @@ h2{
   gap: 16px;
   max-width: 1000px;
   width: 100%;
-
 }
 
 .dishCardContent{
@@ -278,76 +275,14 @@ gap: 16px;
   font-size: 24px;
   }
 
+/* Media Queries */
 
-  @media(max-width:700px){
-
-   .HeroContainer {
-    padding: 20px 20px 0 20px;
-    align-items: center;
-   } 
-
-   .menu{
-    padding: 20px 20px 0 20px;
-      align-items: center;
-   } 
-
-
+@media (max-width: 700px) {
   .hamburgerIcon{
     display: none;
   }
 
   .TitleRate {
-  flex-direction: column-reverse;
-  margin-top: 16px;
-}
-
-.category {
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.hero {        
- height: 308px;
- border-radius: 20px;
-} 
-
-.HeroLogo {
-height: 150px;
-width: 150px;
-}
-
-.dishCard {
-  flex-direction: column;
-  
-  border-radius: 20px;
-
-}
-
-
-.dishCardContent {
-  flex-direction: column;
-}
-
-.priceAdd {
-  flex-direction: row;
-}
-
-.categoryContainer {
-  flex-direction: column;
-}
-.category img{
-  width: 60px;
-  height: 81px;
-}
-h2{
-  font-size: 30px;
-
-}  
-
-.dishCard img {
-  width: 630px;
-
-}
-
+    flex-direction: column-reverse;
+  }
 }
