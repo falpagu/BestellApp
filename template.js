@@ -9,8 +9,8 @@ let category = allMenu[i];
 
 return `
       <div class="categoryContainer">
-        <div class="category">   
-          <img src="${category.icon}">
+        <div class="category wrapper">   
+          <img src="${category.icon}" alt="category icons" >
           <h2>${text}</h2>
         </div> 
       </div>   
@@ -24,8 +24,9 @@ let dish = allMenu[i].dishes[j]
 
 
 return `
+<div class="wrapper">
     <div class="dishCard">
-        <div onclick="openBasket()"><img src="${dish.img}"></div>
+        <div onclick="openBasket()"><img src="${dish.img}" alt="dish pic" ></div>
       <div class="dishCardContent">
             <div class="dishName">
                 <span onclick="openBasket()">${dish.name}</span>
@@ -36,7 +37,9 @@ return `
                 <span>${dish.price}€</span>
                 <button id="addButton" onclick="addToBasket(event, ${i}, ${dish.id})">Add to basket</button> 
             </div>   
-      </div>       
+      </div>  
+      
+     </div> 
         
     </div>
        
@@ -50,8 +53,8 @@ function getBasketItemsTemplate(dish) {
 
   let minusIcon = dish.amount === 1
 
-  ? `<img onclick="decrement(${dish.id})" src="./assets/icons-logos/delete-icon.svg">`
-  : `<i onclick="decrement(${dish.id})" class="bi bi-dash-lg"></i> 
+  ? `<img onclick="decrement(${dish.id})" src="./assets/icons-logos/delete-icon.svg" alt="delete icon" >`
+  :`<span onclick="decrement(${dish.id})" class="dash">➖</span>
   `;
   
   let deleteIcon = dish.amount > 1
@@ -72,9 +75,9 @@ function getBasketItemsTemplate(dish) {
                   <div class="deleteAdd">
                   ${minusIcon}
                    <span class="amount">${dish.amount}</span>
-                   <i onclick="increment(${dish.id})" class="bi bi-plus-lg"></i>
-                  </div>
+                   <span onclick="increment(${dish.id})" class="plus">➕</span>
 
+                  </div>
                   <div>${(dish.price * dish.amount).toFixed(2)}€</div>
                 </div>
 
@@ -117,3 +120,5 @@ function getOrderConfirmedTemplate(){
 }
 
     
+
+//  <i onclick="increment(${dish.id})" class="bi bi-plus-lg"></i>

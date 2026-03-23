@@ -30,32 +30,29 @@ body {
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: whitesmoke;
-  padding-top: 128px;
-  padding-bottom: 128px;
   color:#363534;
   overflow-x: hidden;
 }
 
 .wrapper {
   max-width: 1440px;
-  margin: 0 auto;  
+  margin: 0 auto; 
 } 
 
+ 
 /* HEADER */
 header {
   height: 128px;
   background-color:  #E76C1F;
-  position: fixed;
-  top: 0;
-  width: 100%;
- 
+  width: 100vw;
 }
 
 .HeaderContainer{
   height: 100%;
- display: flex;
-  justify-content: space-between;
+  display: flex;
+  justify-content:space-between;
   align-items: center;
+  padding: 10px;
 }
 
 /* HERO SECTION */
@@ -98,6 +95,7 @@ h1 b {
 
 .TitleRate {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 16px;
 }
@@ -124,41 +122,34 @@ h1 b {
 
 .title p {
   font-size:24px;
+    /* text-wrap: balance; */
 }
 
 
 /* MENU */
-.MenuContainer{
+.menuContainer {
   display: flex;
-  flex-direction: row;
-  margin-bottom: 64px;
-}
+  align-items: flex-start;
+ position: relative;
 
-.menu {
-  width: calc(100% - 300px);
 }
 
 .categoryContainer{
   background-color:#E76C1F;
   margin-bottom: 24px;
-
-  width: 100vw;
-
+  width: 100vw;  
   position: relative;
-  left: 50%;
-  /* right: 50%; */
-
-  margin-left: -50vw;
-  margin-right: -50vw;
+  z-index: 1;
+  
 }
 
 .category{
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-content: center; 
-
   height: 60px;  
   gap: 8px;
 }
@@ -174,7 +165,6 @@ h2{
 .size {
   font-weight: 400;
   font-size: 24px;
-  
 }
 
 .category img{
@@ -189,7 +179,8 @@ h2{
   padding: 15px;
   margin-bottom: 15px;
   gap: 16px;
-  width: 1000px;
+  max-width: 1000px;
+  width: 100%;
 
 }
 
@@ -257,18 +248,106 @@ h2{
 footer {
   height: 128px;
   background-color:  #E76C1F;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 18px !important; */
 }
 
 .FooterContainer{
 display: flex;
 color: white;
 gap: 16px;
+}
 
-}E76C1F
+/* Imprint */
+
+.imprint h2 {
+  color: #363534;
+  font-size: 24px;
+  }
+  
+  .imprint p{
+    margin-bottom: 16px;
+  }
+
+  /* Cookie Preferences*/
+
+  .cookie-consent h2 {
+ color: #363534;
+  font-size: 24px;
+  }
+
+
+  @media(max-width:700px){
+
+   .HeroContainer {
+    padding: 20px 20px 0 20px;
+    align-items: center;
+   } 
+
+   .menu{
+    padding: 20px 20px 0 20px;
+      align-items: center;
+   } 
+
+
+  .hamburgerIcon{
+    display: none;
+  }
+
+  .TitleRate {
+  flex-direction: column-reverse;
+  margin-top: 16px;
+}
+
+.category {
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.hero {        
+ height: 308px;
+ border-radius: 20px;
+} 
+
+.HeroLogo {
+height: 150px;
+width: 150px;
+}
+
+.dishCard {
+  flex-direction: column;
+  
+  border-radius: 20px;
+
+}
+
+
+.dishCardContent {
+  flex-direction: column;
+}
+
+.priceAdd {
+  flex-direction: row;
+}
+
+.categoryContainer {
+  flex-direction: column;
+}
+.category img{
+  width: 60px;
+  height: 81px;
+}
+h2{
+  font-size: 30px;
+
+}  
+
+.dishCard img {
+  width: 630px;
+
+}
+
+}

@@ -10,9 +10,9 @@
       sizes="32x32"
       href="./assets/icons-logos/favicon.svg"
     />
+    
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="basket.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   </head>
 
   <body onload="init()">
@@ -21,15 +21,15 @@
         <a href="index.html"
           ><img src="./assets/icons-logos/Logo.png" alt="logo"
         /></a>
-        <a href="index.html">
+        <a class="hamburgerIcon" href="index.html">
           <img src="./assets/icons-logos/menu-bar.svg" alt="hamburger icon"
         /></a>
       </nav>
     </header>
 
-    <main class="wrapper">
+    <main>
       <!--  HERO SECTION  -->
-      <section class="HeroContainer">
+      <section class="HeroContainer wrapper">
         <img class="hero" src="./assets/img/hero-pic.jpg" alt="hero pic" />
         <img
           class="HeroLogo"
@@ -41,7 +41,7 @@
           <div class="TitleRate">
             <h1><b>Burger</b>House</h1>
             <div class="rate">
-              <img src="./assets/icons-logos/star.svg" />
+              <img src="./assets/icons-logos/star.svg" alt="star icon"  />
               <span><b>4,1</b></span>
               <p>(317)</p>
             </div>
@@ -50,15 +50,14 @@
         </div>
       </section>
 
-      <section class="MenuContainer">
+      <div class="menuContainer">
         <!--  MENU  -->
         <div class="menu" id="menu"></div>
 
         <!--  BASKET -->
-        <aside class="basketContainer" id="basket">
-        </aside>   
-      </section>
-
+        <aside class="basketContainer" id="basket"></aside>
+      </div>
+      
     </main>
 
     <!-- FOOTER -->
@@ -75,4 +74,3 @@
     <script src="main.js"></script>
   </body>
 </html>
-  

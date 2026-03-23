@@ -5,33 +5,33 @@ let allMenu = [
     "dishes": [
       {
         "id": 1,
-        "name": "Veggie mushroom black burger",
+        "name": "Veggie Mushroom Black Burger",
         "price": 16.90,
-        "ingredients": "Gemischter grüner Salat, Tomaten, Edamame, Pilze",
+        "ingredients": "Mixed green salad, tomatoes, edamame, mushrooms",
         "img": "./assets/img/veggie_mushroom_black_burger.jpg",
         "amount": 0
       },
       {
         "id": 2,
-        "name": "All meat burger",
+        "name": "All Meat Burger",
         "price": 15.90,
-        "ingredients": "Rindfleisch, Speck, Gewürzgurken, Geräucherter Käse, Ketchup, BBQ-Sauce",
+        "ingredients": "Beef, bacon, pickles, smoked cheese, ketchup, BBQ sauce",
         "img": "./assets/img/all_meat_burger.jpg",
         "amount": 0
       },
       {
         "id": 3,
-        "name": "Beef red burger",
+        "name": "Beef Red Burger",
         "price": 14.90,
-        "ingredients": "Rindfleisch, Käse, Tomaten, Salat, Zwiebel",
+        "ingredients": "Beef, cheese, tomatoes, lettuce, onion",
         "img": "./assets/img/beef_red_burger.jpg",
         "amount": 0
       },
       {
         "id": 4,
-        "name": "Big chicken burger",
+        "name": "Big Chicken Burger",
         "price": 15.90,
-        "ingredients": "Hähnchen, Käse, Tomaten, Salat, Zwiebel, Paprika",
+        "ingredients": "Chicken, cheese, tomatoes, lettuce, onion, bell pepper",
         "img": "./assets/img/big_chicken_burger.jpg",
         "amount": 0
       }
@@ -46,7 +46,7 @@ let allMenu = [
         "id": 5,
         "name": "Pizza Margherita",
         "price": 11.90,
-        "ingredients": "Tomatensauce, Mozzarella",
+        "ingredients": "Tomato sauce, mozzarella",
         "img": "./assets/img/pizza_margherita.jpg",
         "amount": 0
       },
@@ -54,23 +54,23 @@ let allMenu = [
         "id": 6,
         "name": "Pizza Chorizo",
         "price": 13.90,
-        "ingredients": "Tomatenscheiben, Mozzarella, Chorizo",
+        "ingredients": "Tomatoes, mozzarella, chorizo",
         "img": "./assets/img/pizza_chorizo.jpg",
         "amount": 0
       },
       {
         "id": 7,
-        "name": "Funghi",
+        "name": "Funghi Pizza",
         "price": 12.90,
-        "ingredients": "Rote Zwiebel, Oliven, Champignons, Mozzarella",
+        "ingredients": "Red onion, olives, mushrooms, mozzarella",
         "img": "./assets/img/pizza_funghi.jpg",
         "amount": 0
       },
       {
         "id": 8,
-        "name": "Quattro Formaggi mit Hähnchen",
+        "name": "Quattro Formaggi with Chicken",
         "price": 15.90,
-        "ingredients": "Hähnchen, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano",
+        "ingredients": "Chicken, mozzarella, gorgonzola, fontina, parmesan",
         "img": "./assets/img/quattro_formaggi_chicken.jpg",
         "amount": 0
       }
@@ -79,37 +79,37 @@ let allMenu = [
 
   {
     "icon": "./assets/icons-logos/salad-icon-small.svg",
-    "category": "Salad",
+    "category": "Salads",
     "dishes": [
       {
         "id": 9,
-        "name": "Warmer Rindfleisch-Rucola-Salat",
+        "name": "Warm Beef Arugula Salad",
         "price": 16.90,
-        "ingredients": "Rindfleisch, Rucola, Feldsalat, Feta, Cherrytomaten, Getrocknete Tomaten, Balsamico-Dressing",
+        "ingredients": "Beef, arugula, lamb’s lettuce, feta, cherry tomatoes, sun-dried tomatoes, balsamic dressing",
         "img": "./assets/img/warm_beef_arugula_salad.jpg",
         "amount": 0
       },
       {
         "id": 10,
-        "name": "Mini grüner Salat",
+        "name": "Mini Green Salad",
         "price": 7.90,
-        "ingredients": "Grüner Salat, Gurke, Karotten, Petersilie, Radieschen",
+        "ingredients": "Green salad, cucumber, carrots, parsley, radishes",
         "img": "./assets/img/mini_green_salad.jpg",
         "amount": 0
       },
       {
         "id": 11,
-        "name": "Grüner Salat mit Meeresfrüchten",
+        "name": "Green Salad with Seafood",
         "price": 16.90,
-        "ingredients": "Gemischter Salat, Cherrytomaten, Rote Zwiebel, Muscheln, Tintenfischringe, Garnelen, Dijon-Senf-Zitronen-Dressing mit Dill",
+        "ingredients": "Mixed salad, cherry tomatoes, red onion, mussels, squid rings, shrimp, Dijon mustard lemon dill dressing",
         "img": "./assets/img/green_salad_seafood.jpg",
         "amount": 0
       },
       {
         "id": 12,
-        "name": "Veganer grüner Salat mit Tofu",
+        "name": "Vegan Green Salad with Tofu",
         "price": 14.90,
-        "ingredients": "Grüner Salat, Cherrytomaten, Gurke, Babyspinat, Edamame, Radieschen, Kresse, Tofu, Erdnüsse",
+        "ingredients": "Green salad, cherry tomatoes, cucumber, baby spinach, edamame, radishes, cress, tofu, peanuts",
         "img": "./assets/img/vegan_green_salad_tofu.jpg",
         "amount": 0
       }

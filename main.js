@@ -10,6 +10,8 @@ function init() {
   saveToLocalStorage();
 }
 
+
+
 function renderMenu() {
   let allMenuRef = document.getElementById("menu");
   let html = "";
@@ -23,6 +25,10 @@ function renderMenu() {
   }
   allMenuRef.innerHTML = html;
 }
+
+
+
+
 
 function openBasket() {
   basketOpened = true;
@@ -69,17 +75,17 @@ function renderBasket() {
   }
   let html = `<div class="basket">
      
-  <div class="basketBtnContainer">
+  <div class="basketCloseBtn">
     <img onclick="closeBasketBtn()"class="closeBasketBtn" src="./assets/icons-logos/shopping-cart.svg">
     <span id="dishAmount" class="dishAmount">0</span>
   </div>
       
   <h2>Your Basket</h2>
   
-      <div class="deliveryCollection">
-            <button id="delivery" onclick="switchBtn('delivery')"><img src="./assets/icons-logos/delivery-on-the-way.svg">Delivery</button>
-            <button id="collection" onclick="switchBtn('collection')">🛍️Collection</button>
-      </div>
+  <div class="deliveryCollection">
+          <button id="delivery" onclick="switchBtn('delivery')"><img src="./assets/icons-logos/delivery-on-the-way.svg">Delivery</button>
+          <button id="collection" onclick="switchBtn('collection')">🛍️Collection</button>
+  </div>
   `;
 
   if (basket.length === 0) {
