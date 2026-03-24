@@ -90,7 +90,7 @@ function renderBasket() {
 
   if (basket.length === 0) {
     html += `
-    <div class="basketEmty">
+    <div class="basketEmpty">
           <h4>Fill your basket</h4>
           <span>Your basket is empty</span>
           <img src="./assets/icons-logos/shopping-cart.png">

@@ -7,7 +7,6 @@ position: sticky;
 top: 20px;
 z-index: 1000;
 right: 36%;
-
 }
 
 
@@ -125,7 +124,7 @@ color: #363534
   color: rgb(174, 173, 173);
 }
 
-.basketEmty img {
+.basketEmpty img {
   margin-top: 20px;
   height: 64px;
   opacity: 50%;
@@ -154,6 +153,7 @@ justify-content: space-between;
   height: 24px;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 
@@ -250,16 +250,16 @@ margin-left: 150px;
 }
 
 
-.orderConfirm p {
-  font-size: 20px;
-  font-weight: 700;
+.orderConfirm span {
+  font-size: 16px;
+  font-weight: 400;
   color: #FDEADC;
   margin-top: 10px;
 }
 
-.orderConfirm{
-  font-size: 29px;
-  font-weight: 700;
+.orderConfirm p {
+  font-size: 24px;
+  font-weight: 600;
   color: #FDEADC;
 } 
 

@@ -275,14 +275,3 @@ gap: 16px;
   font-size: 24px;
   }
 
-/* Media Queries */
-
-@media (max-width: 700px) {
-  .hamburgerIcon{
-    display: none;
-  }
-
-  .TitleRate {
-    flex-direction: column-reverse;
-  }
-}
