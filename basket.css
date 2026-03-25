@@ -2,7 +2,8 @@
 
  /* BASKET   */
 
-.basketContainer {
+
+ .basketContainer {
 position: sticky;
 top: 20px;
 z-index: 1000;
@@ -21,11 +22,11 @@ right: 36%;
   align-items: center;
 }
 
-.basketCloseBtn{
+.basketCloseContainer{
 position: relative;
 }
 
-.closeBasketBtn {
+.basketCloseBtn{
 margin-left: 220px;
 height: 32px;
 }
@@ -40,7 +41,7 @@ border-radius: 7px;
 padding:0 5px 0 5px;
 }
 
-.closeBasketBtn:hover{
+.basketCloseBtn:hover{
   cursor: pointer;
   filter: brightness(1.2);
 }
@@ -262,4 +263,15 @@ margin-left: 150px;
   font-weight: 600;
   color: #FDEADC;
 } 
+
+
+@media (max-width: 700px) {
+
+.basket{
+  border-radius: 15px 15px 0 0;    
+
+}
+
+}
+
 

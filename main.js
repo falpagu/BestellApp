@@ -10,8 +10,6 @@ function init() {
   saveToLocalStorage();
 }
 
-
-
 function renderMenu() {
   let allMenuRef = document.getElementById("menu");
   let html = "";
@@ -26,10 +24,6 @@ function renderMenu() {
   allMenuRef.innerHTML = html;
 }
 
-
-
-
-
 function openBasket() {
   basketOpened = true;
 
@@ -39,6 +33,16 @@ function openBasket() {
 
 function closeBasketBtn() {
   document.getElementById("basket").style.display = "none";
+}
+
+function basketNavIconToggle() {
+  if (!basketOpened) {
+    openBasket();
+    basketOpened = true;
+  } else {
+    closeBasketBtn();
+    basketOpened = false;
+  }
 }
 
 function addToBasket(event, category, id) {
@@ -62,7 +66,9 @@ function addToBasket(event, category, id) {
 
 function updateDishAmount() {
   let numberOfDishes = basket.reduce((sum, dish) => sum + dish.amount, 0);
-  document.getElementById("dishAmount").innerHTML = numberOfDishes;
+
+  document.getElementById("dishAmount").textContent = numberOfDishes;
+  document.getElementById("dishAmountNav").textContent = numberOfDishes;
 }
 
 function renderBasket() {
@@ -75,8 +81,8 @@ function renderBasket() {
   }
   let html = `<div class="basket">
      
-  <div class="basketCloseBtn">
-    <img onclick="closeBasketBtn()"class="closeBasketBtn" src="./assets/icons-logos/shopping-cart.svg">
+  <div class="basketCloseContainer">
+    <img onclick="closeBasketBtn()"class="basketCloseBtn" src="./assets/icons-logos/shopping-cart.svg">
     <span id="dishAmount" class="dishAmount">0</span>
   </div>
       

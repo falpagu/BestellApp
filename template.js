@@ -121,4 +121,3 @@ function getOrderConfirmedTemplate(){
 
     
 
-//  <i onclick="increment(${dish.id})" class="bi bi-plus-lg"></i>
