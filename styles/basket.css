@@ -9,6 +9,7 @@
   flex-shrink: 0;
 }
 
+
 .basketContainer.show {
   display: block;   
 }
@@ -21,6 +22,7 @@ background-color: #363534;
 border-radius: 15px 0 0 15px;
 padding: 20px;
 }
+
 
 #basketContent {
   display: flex;
@@ -40,10 +42,12 @@ padding: 20px;
 position: relative;
 }
 
+
 .basketCloseBtn{
 margin-left: 260px;
 height: 32px;
 }
+
 
 .dishAmount{
 position: absolute;
@@ -55,10 +59,12 @@ border-radius: 7px;
 padding:0 5px 0 5px;
 }
 
+
 .basketCloseBtn:hover{
   cursor: pointer;
   filter: brightness(1.2);
 }
+
 
 .deliveryCollection{
 display: flex;
@@ -70,9 +76,11 @@ padding: 8px;
 width: 100%;
 }
 
+
 .deliveryCollection img {
   height: 20px;
 }
+
 
 .deliveryCollection button {
   background-color: transparent;
@@ -85,18 +93,20 @@ width: 100%;
   font-family: "Palanquin", sans-serif;
 }
 
+
 .deliveryCollection button.active{
   background-color: #363534;
   border-radius: 20px;
   color: #FFFFFF;
   padding: 7px 12px;
-
 }
+
 
 .deliveryCollection button:hover {
   cursor: pointer;
   filter: brightness(1.2);
 }
+
 
 .basket h2 {
   font-size: 32px;
@@ -106,19 +116,23 @@ width: 100%;
   text-align: center;
 }
 
+
 .addedItem {
   color: #E76C1F;
 }  
 
+
 .amount{
 color: #363534
 }
+
 
 .dash{
   font-size: 20px;
   filter: brightness(1.2);
   cursor: pointer;
 }
+
 
 .plus {
 font-size: 20px;
@@ -134,6 +148,7 @@ cursor: pointer;
  margin-top: 24px; 
 }  
 
+
 .basketEmpty h4 {
   color: rgb(174, 173, 173);
   font-size: 24px;
@@ -142,11 +157,14 @@ cursor: pointer;
   color:rgb(174, 173, 173);
   font-size: 18px;
 }
+
+
 .basketEmpty img {
   margin-top: 20px;
   height: 64px;
   opacity: 60%;
 }
+
 
 .basketBox{
 background: #FDEADC;
@@ -167,6 +185,7 @@ flex-direction: row;
 justify-content: space-between;
 }
 
+
 .nameDeleteBtn button {
   height: 24px;
   background: none;
@@ -175,11 +194,11 @@ justify-content: space-between;
 }
 
 
-
 .basketAmountPreis{
   display: flex;
   justify-content: space-between;
 }
+
 
 .deleteAdd{
   display: flex;
@@ -189,38 +208,41 @@ justify-content: space-between;
   gap: 8px;
 }
 
+
 .deleteAdd img {
   height: 20px;
-    cursor: pointer;
+  cursor: pointer;
 }
+
 
 .sumContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
-
 }
+
 
 .sum {
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   margin-top: 24px;
- 
 }
+
 
 .priceLine {
   display: flex;
   justify-content: space-between;
-
- 
 }
+
+
 .separator {
     background-color: #FFFFFF;
     width: 100%;
     height: 2px;  
     margin: 10px 0;
-    }
+}
+
 
 .buyNow{
   background: #E76C1F;
@@ -230,9 +252,8 @@ justify-content: space-between;
   padding: 5px;
   margin-top: 24px;
   cursor: pointer;
- 
-
 }
+
 
 /* Order Confirmed Container */
 
@@ -246,9 +267,11 @@ justify-content: space-between;
   margin: auto;
 }
 
+
 .orderConfirmContainer::backdrop{
   background: rgba(0, 0, 0, 0.6);
 }
+
 
 .orderConfirmCloseBtn {
 font-size: 32px;
@@ -258,6 +281,7 @@ font-weight: 900;
 border: none;
 margin-left: 150px;
 }
+
 
 .orderConfirmCloseBtn:hover{
   cursor: pointer;
@@ -278,21 +302,49 @@ margin-left: 150px;
   margin-top: 10px;
 }
 
+
 .orderConfirm p {
   font-size: 24px;
   font-weight: 600;
   color: #FDEADC;
 } 
 
+
 @media (max-width: 500px) {
+
+  .basketContainer {
+  width: 290px; 
+  top: 20px;
+}
+
 
 .basket{
   border-radius: 15px 15px 0 0;   
+  height: 550px;
+}
+
+
+.basketCloseBtn{
+margin-left: 210px;
+height: 32px;
+}
+
+
+#basketContent {
+  height: 70%;
+}
+
+
+.sum{
+  margin-top:8px;
+}
+
+
+.buyNow{
+  margin-top: 8px;
+}
 
 }
 
- .basketContainer{
 
-  top: 20px;
-}
-}
+

@@ -9,21 +9,19 @@ function init() {
   renderBasket();
 }
 
+function renderMenu() {
+  let allMenuRef = document.getElementById("menu");
 
-function renderMenu(){
-let allMenuRef = document.getElementById("menu");
+  let html = "";
 
-let html ="";
+  for (let i = 0; i < allMenu.length; i++) {
+    html += getCategoryTemplate(i);
 
-for (let i = 0; i < allMenu.length; i++) {
-  html += getCategoryTemplate(i);
-  
-  for (let j = 0; j < allMenu[i].dishes.length; j++) {
-    html += getDishTemplate(i, j);
+    for (let j = 0; j < allMenu[i].dishes.length; j++) {
+      html += getDishTemplate(i, j);
+    }
+    allMenuRef.innerHTML = html;
   }
-allMenuRef.innerHTML = html;
-}
-
 }
 
 function openBasket() {
@@ -32,15 +30,12 @@ function openBasket() {
   basketOpened = true;
 
   renderBasket();
-
 }
 
 function closeBasketBtn() {
-  
   let closeBasketRef = document.getElementById("basket");
   closeBasketRef.classList.remove("show");
   basketOpened = false;
-
 }
 
 function basketNavIconToggle() {
@@ -82,14 +77,10 @@ function updateDishAmount() {
   if (dishAmountNav) {
     dishAmountNav.textContent = numberOfDishes;
   }
-
-
 }
 
 function renderBasket() {
-
   let basketRef = document.getElementById("basketContent");
-  let html = "";
 
   if (!basketOpened) {
     basketRef.innerHTML = "";
@@ -97,19 +88,10 @@ function renderBasket() {
   }
 
   if (basket.length === 0) {
-    html += `
-    <div class="basketEmpty">
-          <h4>Fill your basket</h4>
-          <span>Your basket is empty</span>
-          <img src="./assets/icons-logos/shopping-cart.png">
-    </div>`;
+    basketRef.innerHTML = getEmptyBasketTemplate();   
   } else {
-    html += `<div class="basketItems">`;
-    html += renderBasketItems();
-    html += `</div>`;
-    html += renderBasketSum();
+    basketRef.innerHTML = getBasketTemplate();
   }
-  basketRef.innerHTML = html;
   updateDishAmount();
 }
 
@@ -171,8 +153,7 @@ function decrement(id) {
   if (dish.amount <= 0) {
     basket = basket.filter((d) => d.id !== id);
   }
- renderBasket();
-
+  renderBasket();
 }
 
 function increment(id) {
@@ -181,9 +162,7 @@ function increment(id) {
 
   dish.amount++;
   renderBasket();
- 
 }
-
 
 function deleteDish(id) {
   basket = basket.filter((d) => d.id !== id);
@@ -211,7 +190,3 @@ function orderConfirmCloseBtn() {
   dialog.close();
   dialog.remove();
 }
-
-
-
-
