@@ -27,13 +27,20 @@ a{
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "Palanquin", sans-serif;
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: whitesmoke;
   color:#363534;
-  overflow-x: hidden;
+ 
 }
+
+/* main {
+  flex: 1;    
+} */
 
 .wrapper {
   max-width: 1440px;
@@ -45,7 +52,7 @@ body {
 header {
   height: 128px;
   background-color:  #E76C1F;
-  width: 100vw;
+  width: 100%;
 }
 
 .HeaderContainer{
@@ -124,28 +131,36 @@ h1 b {
 
 .title p {
   font-size:24px;
-    text-wrap: balance;
+  text-wrap: balance;
 }
 
 
 /* MENU */
-.menuContainer {
-  display: flex;
-  align-items: flex-start;
- position: relative;
 
+.contentWrapper{
+ position: relative; 
+ display: flex;
+ align-items: flex-start;
+
+ max-width: 1440px;
+ margin: 0 auto;
+
+}
+
+.menu {
+  width: calc(100% - 350px);
+ 
 }
 
 .categoryContainer{
-  background-color:#E76C1F;
-  margin-bottom: 45px;
-  width: 100vw;  
-  position: relative;
-  z-index: 1;  
+
 }
 
+
 .category{
-  max-width: 1440px;
+  background-color:#E76C1F;
+  width: 100%;
+  max-width: 1440px; 
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -158,7 +173,6 @@ h1 b {
   font-size: 40px;
   font-weight: 500;
   color: #ffffff;
-
 } 
 
 .size {
@@ -172,11 +186,12 @@ h1 b {
 }
 
 .dishCard {
+  margin-top: 24px;
   background-color: #FDEADC;
   display: flex;
   justify-content: center;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 32px;
   gap: 16px;
   max-width: 1000px;
   width: 100%;
@@ -246,10 +261,11 @@ h1 b {
 footer {
   height: 128px;
   background-color:  #E76C1F;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .footerContainer{
@@ -283,6 +299,8 @@ gap: 16px;
   font-size: 25px;
   }
 
+
+  
 /* Media Queries */
   @media (max-width: 700px) {
 
@@ -353,17 +371,34 @@ justify-content: center;
   flex-direction: row;
 }
 
-/* FOOTER NAVIGATION */
+}
+
+
+
+@media (max-width: 500px){
+
+  /* FOOTER NAVIGATION */
+
+.home footer{
+margin-bottom: 80px;
+}
+
 .footerNav {
   display: block;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .footerNavContainer {
-  background-color: #363534;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 16px;
-  margin-top: 16px;
+  background-color: #363534;
+
+
 }
 
 .footerNavContainer img {
@@ -373,7 +408,6 @@ justify-content: center;
 .basketNavIcon {
   position: relative;
 }
-
 
 
 .dishAmountNav {
@@ -387,8 +421,6 @@ padding:0 5px 0 5px;
 }
 
 }
-
-
 
 @media (max-width: 444px) {
 
@@ -415,7 +447,7 @@ padding:0 5px 0 5px;
 
 .size {
   font-size: 16px;
-
+    
 }
 
 .category img{

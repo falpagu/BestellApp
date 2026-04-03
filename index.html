@@ -10,21 +10,24 @@
       sizes="32x32"
       href="./assets/icons-logos/favicon.svg"
     />
-    <link rel="stylesheet" href="basket.css">
-    <link rel="stylesheet" href="style.css" />
-    
+    <link rel="stylesheet" href="basket.css" />
+    <link rel="stylesheet" href="./copy/style copy 3.css">
   </head>
 
-  <body onload="init()">
+  <body class="home" onload="init()">
     <header>
-      <nav class="HeaderContainer wrapper">
-        <a href="index.html"
-          ><img src="./assets/icons-logos/Logo.png" alt="logo"
-        /></a>
-        <a class="hamburgerIcon" href="index.html">
-          <img src="./assets/icons-logos/menu-bar.svg" alt="hamburger icon"
-        /></a>
-      </nav>
+      
+      <!-- <div class="wrapper"> -->
+        <nav class="headerContainer wrapper">
+          <a href="index.html"
+            ><img src="./assets/icons-logos/Logo.png" alt="logo"
+          /></a>
+          <a class="hamburgerIcon" href="index.html">
+            <img src="./assets/icons-logos/menu-bar.svg" alt="hamburger icon"
+          /></a>
+        </nav>
+      <!-- </div> -->
+
     </header>
 
     <main>
@@ -41,7 +44,7 @@
           <div class="TitleRate">
             <h1><b>Burger</b>House</h1>
             <div class="rate">
-              <img src="./assets/icons-logos/star.svg" alt="star icon"  />
+              <img src="./assets/icons-logos/star.svg" alt="star icon" />
               <span><b>4,1</b></span>
               <p>(317)</p>
             </div>
@@ -50,16 +53,44 @@
         </div>
       </section>
 
-      <div class="menuContainer">
+
+
+      <section class="contentWrapper wrapper">
         <!--  MENU  -->
-        <div class="menu" id="menu"></div>
+        <section class="menu" id="menu"></section>
 
         <!--  BASKET -->
-        <aside class="basketContainer" id="basket"></aside>
-      </div>
-      
+        <aside class="basketContainer show" id="basket">
+          <div class="basket">
+            <div class="basketClose">
+              <img
+                onclick="closeBasketBtn()"
+                class="basketCloseBtn"
+                src="./assets/icons-logos/shopping-cart.svg"
+              />
+              <span id="dishAmount" class="dishAmount">0</span>
+            </div>
+            <h2>Your Basket</h2>
+            <div class="deliveryCollection">
+              <button id="delivery" onclick="switchOrderType('delivery')">
+                <img
+                  src="./assets/icons-logos/delivery-on-the-way.svg"
+                />Delivery
+              </button>
+              <button id="collection" onclick="switchOrderType('collection')">
+                🛍️Collection
+              </button>
+            </div>
+            <div id="basketContent">
+              <div id="basketItems"></div>
+              <div id="basketSum"></div>
+            </div>
+          </div>
+        </aside>
+      </section>
     </main>
 
+    
     <!-- FOOTER -->
     <footer>
       <div class="footerContainer wrapper">
@@ -71,22 +102,33 @@
 
     <!-- FOOTER NAVIGATION -->
     <div class="footerNav" id="footerNav">
-
       <div class="footerNavContainer">
-        <a href="index.html"><img src="./assets/icons-logos/home.svg" alt="home logo"></a>
-    
-        <img src="./assets/icons-logos/person.svg" alt="customer profile logo">
-        <img src="./assets/icons-logos/orders-small-logo.svg" alt="logo without text">
+        <a href="index.html"
+          ><img src="./assets/icons-logos/home.svg" alt="home logo"
+        /></a>
+
+        <img
+          src="./assets/icons-logos/person.svg"
+          alt="customer profile logo"
+        />
+        <img
+          src="./assets/icons-logos/orders-small-logo.svg"
+          alt="logo without text"
+        />
         <div class="basketNavIcon">
-          <img onclick="basketNavIconToggle()"class="basketNavIconBtn" src="./assets/icons-logos/shopping-cart.svg">
-          <span id="dishAmountNav"class="dishAmount">0</span>
+          <img
+            onclick="basketNavIconToggle()"
+            class="basketNavIconBtn"
+            src="./assets/icons-logos/shopping-cart.svg"
+          />
+          <span id="dishAmountNav" class="dishAmount">0</span>
         </div>
       </div>
-      
     </div>
 
-    <script src="databank.js"></script>
+    <script src="database.js"></script>
     <script src="template.js"></script>
-    <script src="main.js"></script>
+    <script src="script.js"></script>
+    
   </body>
 </html>

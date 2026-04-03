@@ -7,32 +7,40 @@ let DeliveryFee = 3.99;
 function init() {
   renderMenu();
   renderBasket();
-  saveToLocalStorage();
 }
 
-function renderMenu() {
-  let allMenuRef = document.getElementById("menu");
-  let html = "";
 
-  for (let i = 0; i < allMenu.length; i++) {
-    html += getCategoryTemplate(i);
+function renderMenu(){
+let allMenuRef = document.getElementById("menu");
 
-    for (let j = 0; j < allMenu[i].dishes.length; j++) {
-      html += getDishTemplate(i, j);
-    }
+let html ="";
+
+for (let i = 0; i < allMenu.length; i++) {
+  html += getCategoryTemplate(i);
+  
+  for (let j = 0; j < allMenu[i].dishes.length; j++) {
+    html += getDishTemplate(i, j);
   }
-  allMenuRef.innerHTML = html;
+allMenuRef.innerHTML = html;
+}
+
 }
 
 function openBasket() {
+  let openBasketRef = document.getElementById("basket");
+  openBasketRef.classList.add("show");
   basketOpened = true;
 
   renderBasket();
-  switchBtn("delivery");
+
 }
 
 function closeBasketBtn() {
-  document.getElementById("basket").style.display = "none";
+  
+  let closeBasketRef = document.getElementById("basket");
+  closeBasketRef.classList.remove("show");
+  basketOpened = false;
+
 }
 
 function basketNavIconToggle() {
@@ -46,8 +54,6 @@ function basketNavIconToggle() {
 }
 
 function addToBasket(event, category, id) {
-  openBasket();
-
   let dish = allMenu[category].dishes.find((d) => d.id === id);
 
   if (dish) {
@@ -60,39 +66,35 @@ function addToBasket(event, category, id) {
     button.classList.add("addedItem");
   }
 
-  renderBasket();
-  switchBtn("delivery");
+  openBasket();
 }
 
 function updateDishAmount() {
   let numberOfDishes = basket.reduce((sum, dish) => sum + dish.amount, 0);
 
-  document.getElementById("dishAmount").textContent = numberOfDishes;
-  document.getElementById("dishAmountNav").textContent = numberOfDishes;
+  let dishAmount = document.getElementById("dishAmount");
+  let dishAmountNav = document.getElementById("dishAmountNav");
+
+  if (dishAmount) {
+    dishAmount.textContent = numberOfDishes;
+  }
+
+  if (dishAmountNav) {
+    dishAmountNav.textContent = numberOfDishes;
+  }
+
+
 }
 
 function renderBasket() {
-  let basketRef = document.getElementById("basket");
+
+  let basketRef = document.getElementById("basketContent");
+  let html = "";
 
   if (!basketOpened) {
     basketRef.innerHTML = "";
-    // don't do anything when basket is close
     return;
   }
-  let html = `<div class="basket">
-     
-  <div class="basketCloseContainer">
-    <img onclick="closeBasketBtn()"class="basketCloseBtn" src="./assets/icons-logos/shopping-cart.svg">
-    <span id="dishAmount" class="dishAmount">0</span>
-  </div>
-      
-  <h2>Your Basket</h2>
-  
-  <div class="deliveryCollection">
-          <button id="delivery" onclick="switchBtn('delivery')"><img src="./assets/icons-logos/delivery-on-the-way.svg">Delivery</button>
-          <button id="collection" onclick="switchBtn('collection')">🛍️Collection</button>
-  </div>
-  `;
 
   if (basket.length === 0) {
     html += `
@@ -100,15 +102,13 @@ function renderBasket() {
           <h4>Fill your basket</h4>
           <span>Your basket is empty</span>
           <img src="./assets/icons-logos/shopping-cart.png">
-        </div>`;
+    </div>`;
   } else {
-    html += `<div class="basketDishes">`;
+    html += `<div class="basketItems">`;
     html += renderBasketItems();
     html += `</div>`;
     html += renderBasketSum();
   }
-  html += `</div>`;
-
   basketRef.innerHTML = html;
   updateDishAmount();
 }
@@ -140,7 +140,7 @@ function renderBasketSum() {
   return html;
 }
 
-function switchBtn(type) {
+function switchOrderType(type) {
   orderType = type;
 
   if (type === "delivery") {
@@ -148,9 +148,11 @@ function switchBtn(type) {
   } else {
     DeliveryFee = 0;
   }
-
   renderBasket();
+  switchBtn(type);
+}
 
+function switchBtn(type) {
   let delivery = document.getElementById("delivery");
   let collection = document.getElementById("collection");
   let selected = document.getElementById(type);
@@ -169,8 +171,8 @@ function decrement(id) {
   if (dish.amount <= 0) {
     basket = basket.filter((d) => d.id !== id);
   }
-  saveToLocalStorage();
-  renderBasket();
+ renderBasket();
+
 }
 
 function increment(id) {
@@ -178,9 +180,10 @@ function increment(id) {
   if (!dish) return;
 
   dish.amount++;
-  saveToLocalStorage();
   renderBasket();
+ 
 }
+
 
 function deleteDish(id) {
   basket = basket.filter((d) => d.id !== id);
@@ -200,7 +203,7 @@ function buyNow() {
   setTimeout(() => {
     dialog.close();
     dialog.remove();
-  }, 5000);
+  }, 3000);
 }
 
 function orderConfirmCloseBtn() {
@@ -209,14 +212,6 @@ function orderConfirmCloseBtn() {
   dialog.remove();
 }
 
-function saveToLocalStorage() {
-  localStorage.setItem("basket", JSON.stringify(basket));
-}
-function getFromLocalStorage() {
-  let storedBasket = JSON.parse(localStorage.getItem("basket"));
 
-  if (storedBasket !== null) {
-    basket = storedBasket;
-  }
-  renderBasket();
-}
+
+

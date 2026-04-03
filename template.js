@@ -1,66 +1,62 @@
-
 function getCategoryTemplate(i) {
-let category = allMenu[i];
+  let category = allMenu[i];
 
   let text = category.category.replace(
     /\(.*?\)/,
-    '<span class="size">$&</span>'
+    '<span class="size">$&</span>',
   );
 
-return `
-      <div class="categoryContainer">
-        <div class="category wrapper">   
-          <img src="${category.icon}" alt="category icons" >
-          <h2>${text}</h2>
-        </div> 
-      </div>   
-`;   
-
+  return `
+   
+          <div class="category">   
+             <div class="categoryBg"> </div>  
+             <img src="${category.icon}" alt="category icons" >
+             <h2>${text}</h2>
+          </div> 
+       
+`;
 }
 
 function getDishTemplate(i, j) {
-let dish = allMenu[i].dishes[j]
+  let dish = allMenu[i].dishes[j];
 
+  return `
 
-
-return `
-<div class="wrapper">
     <div class="dishCard">
         <div onclick="openBasket()"><img src="${dish.img}" alt="dish pic" ></div>
       <div class="dishCardContent">
             <div class="dishName">
-                <span onclick="openBasket()">${dish.name}</span>
+                <span>${dish.name}</span>
                 <p>${dish.ingredients}</p> 
             </div>
 
             <div class="priceAdd" >
-                <span>${dish.price}€</span>
+                <span>${dish.price.toFixed(2)}€</span>
                 <button id="addButton" onclick="addToBasket(event, ${i}, ${dish.id})">Add to basket</button> 
             </div>   
       </div>  
       
      </div> 
         
-    </div>
-       
-`;   
 
+       
+`;
 }
 
 function getBasketItemsTemplate(dish) {
+  if (!dish) return "";
 
-  if (!dish) return ''
-
-  let minusIcon = dish.amount === 1
-
-  ? `<img onclick="decrement(${dish.id})" src="./assets/icons-logos/delete-icon.svg" alt="delete icon" >`
-  :`<span onclick="decrement(${dish.id})" class="dash">➖</span>
+  let minusIcon =
+    dish.amount === 1
+      ? `<img onclick="decrement(${dish.id})" src="./assets/icons-logos/delete-icon.svg" alt="delete icon" >`
+      : `<span onclick="decrement(${dish.id})" class="dash">➖</span>
   `;
-  
-  let deleteIcon = dish.amount > 1
-  ? `<button onclick="deleteDish(${dish.id})">
+
+  let deleteIcon =
+    dish.amount > 1
+      ? `<button onclick="deleteDish(${dish.id})">
   <img src="./assets/icons-logos/delete-icon.svg"></button>`
-  : '';
+      : "";
 
   return `
     <div>
@@ -87,8 +83,7 @@ function getBasketItemsTemplate(dish) {
     `;
 }
 
-function getSumTemplate(subtotal, delivery, total){
-
+function getSumTemplate(subtotal, delivery, total) {
   return `
              <div class="sumContainer">
               <div class="sum">
@@ -104,8 +99,7 @@ function getSumTemplate(subtotal, delivery, total){
   `;
 }
 
-function getOrderConfirmedTemplate(){
-
+function getOrderConfirmedTemplate() {
   return `
           <dialog id="orderConfirmContainer" class="orderConfirmContainer">
             <button id="orderConfirmCloseBtn" class="orderConfirmCloseBtn" onclick="orderConfirmCloseBtn()">&times;</button> 
@@ -118,6 +112,3 @@ function getOrderConfirmedTemplate(){
 
   `;
 }
-
-    
-
