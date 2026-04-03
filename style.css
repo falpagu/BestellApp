@@ -1,5 +1,7 @@
                     
 /* GENERAL */    
+
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +10,6 @@
 a{
   text-decoration: none;
   color: white;
-  
 }
 
 
@@ -30,24 +31,24 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   font-family: "Palanquin", sans-serif;
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: whitesmoke;
-  color:#363534;
- 
+  color:#363534; 
 }
 
-/* main {
-  flex: 1;    
-} */
 
 .wrapper {
+
   max-width: 1440px;
-  margin: 0 auto; 
+  margin: 0 auto;  
+  padding: 0 24px;
+  
 } 
 
- 
+
 /* HEADER */
 header {
   height: 128px;
@@ -55,12 +56,12 @@ header {
   width: 100%;
 }
 
-.HeaderContainer{
+.headerContainer{
   height: 100%;
   display: flex;
   justify-content:space-between;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* HERO SECTION */
@@ -141,48 +142,56 @@ h1 b {
  position: relative; 
  display: flex;
  align-items: flex-start;
-
  max-width: 1440px;
  margin: 0 auto;
-
-}
-
-.menu {
-  width: calc(100% - 350px);
+ overflow-x: clip;
  
 }
 
-.categoryContainer{
-
+.menu {
+ width: calc(100% - 350px);
+ flex: 1;
 }
 
 
 .category{
-  background-color:#E76C1F;
-  width: 100%;
-  max-width: 1440px; 
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  height: 60px;  
   gap: 8px;
+  position: relative;
+  z-index: 2;
 }
 
+.categoryBg{
+  background-color:#E76C1F;
+  height: 100%;
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  
+   
+
+}
 
 .category h2{
   font-size: 40px;
   font-weight: 500;
   color: #ffffff;
+  z-index: 2;
 } 
 
 .size {
   font-weight: 400;
   font-size: 24px;
+  z-index: 2;
 }
 
 .category img{
   width: 89px;
   height: 91px;
+  z-index: 2;
 }
 
 .dishCard {
@@ -299,9 +308,10 @@ gap: 16px;
   font-size: 25px;
   }
 
-
-  
 /* Media Queries */
+
+
+
   @media (max-width: 700px) {
 
   .hamburgerIcon {
@@ -458,6 +468,16 @@ padding:0 5px 0 5px;
 
 
 @media (max-width: 343px) {
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h1 b {
+  font-size: 40px;
+  color: #E76C1F;
+}
 
   .category h2{
   font-size: 25px;
