@@ -113,7 +113,7 @@ function getOrderConfirmedTemplate() {
         <img src="./assets/icons-logos/delivery-on-the-way.svg">
         <p>Order confirmed!</p>
         <span>Your food is on the way!</span>
-      /div>
+      </div>
     </dialog>
   `;
 }

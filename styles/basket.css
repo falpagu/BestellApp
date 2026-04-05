@@ -9,7 +9,6 @@
   flex-shrink: 0;
 }
 
-
 .basketContainer.show {
   display: block;   
 }
@@ -310,41 +309,48 @@ margin-left: 150px;
 } 
 
 
-@media (max-width: 500px) {
-
-  .basketContainer {
-  width: 290px; 
+@media (max-width: 700px){
+  
+  .basketContainer{
+  position: fixed;
   top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
 
 .basket{
   border-radius: 15px 15px 0 0;   
-  height: 550px;
+}
 }
 
+@media (max-width: 500px) {
+
+.basket{
+  height: 550px;
+}
 
 .basketCloseBtn{
 margin-left: 210px;
 height: 32px;
-}
-
+} 
 
 #basketContent {
   height: 70%;
-}
-
+} 
 
 .sum{
   margin-top:8px;
 }
 
-
 .buyNow{
   margin-top: 8px;
 }
+} 
+
+
+@media (max-width: 400px) {
+  .basketContainer {
+  width: 300px; 
+} 
 
 }
-
-
-

@@ -88,7 +88,7 @@ function renderBasket() {
   }
 
   if (basket.length === 0) {
-    basketRef.innerHTML = getEmptyBasketTemplate();   
+    basketRef.innerHTML = getEmptyBasketTemplate();
   } else {
     basketRef.innerHTML = getBasketTemplate();
   }
@@ -170,9 +170,23 @@ function deleteDish(id) {
 }
 
 function buyNow() {
-  basketOpened = false; //Basket get closes
-  renderBasket();
+ 
+  basket = [];
 
+  for (let i = 0; i < allMenu.length; i++) {
+    for (let j = 0; j < allMenu[i].dishes.length; j++) {
+      allMenu[i].dishes[j].amount = 0;
+    }
+  }
+  closeBasketBtn();
+  basketOpened = false;
+  renderBasket();
+  updateDishAmount();
+  emptyBasket();
+  renderMenu();
+}
+
+function emptyBasket() {
   let main = document.querySelector("main");
   main.innerHTML += getOrderConfirmedTemplate();
 
@@ -182,7 +196,7 @@ function buyNow() {
   setTimeout(() => {
     dialog.close();
     dialog.remove();
-  }, 3000);
+  }, 2000);
 }
 
 function orderConfirmCloseBtn() {
