@@ -17,7 +17,7 @@ function renderMenu() {
   for (let i = 0; i < allMenu.length; i++) {
     html += getCategoryTemplate(i);
 
-    for (let j = 0; j < allMenu[i].dishe.length; j++) {
+    for (let j = 0; j < allMenu[i].dishes.length; j++) {
       html += getDishTemplate(i, j);
     }
     allMenuRef.innerHTML = html;
