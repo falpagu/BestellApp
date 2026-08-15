@@ -1,3 +1,4 @@
+
 # Bestell App </br> 
 **A food order app, created as a training project during my continuing education at the [Developer Akademie](https://developerakademie.com/)** </br> </br> 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -7,7 +8,7 @@
  <br>
 
 # Screenshot
-<img width="397" height="665" alt="bestellApp_screenshot" src="https://github.com/user-attachments/assets/4319b86c-770f-49c8-ab81-e078fa987f28" /> 
+<img width="1515" height="912" alt="bestellApp_screenshot_2" src="https://github.com/user-attachments/assets/23d2e071-0024-4e77-a506-77a1d71b3722" />
 <br>
 
 
